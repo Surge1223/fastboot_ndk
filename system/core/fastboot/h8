@@ -1,0 +1,9 @@
+# libdiagnose_usb =========================================================
+include $(CLEAR_VARS) 
+LOCAL_MODULE := libdiagnose_usb 
+LOCAL_CFLAGS := $(LIBADB_CFLAGS) 
+LOCAL_SRC_FILES := diagnose_usb.cpp
+# Even though we're building a static library (and thus there's no link step for 
+# this to take effect), this adds the includes to our path.
+LOCAL_STATIC_LIBRARIES := libbase include 
+$(BUILD_STATIC_LIBRARY)
